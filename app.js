@@ -4,11 +4,28 @@ const lastname = document.querySelector("#lastname").value;
 const color = document.querySelector("#color").value;
 const email = document.querySelector("#email").value;
 const password = document.querySelector("#password").value;
+const errorElement = document.getElementById("error");
 
-ourForm.addEventListener("submit", function (e) {
-    e.preventDefault();
+form.addEventListener("submit", (e) => {
+    let messages = [];
+    if (name.value === "" || name.value == null) {
+        messages.push("Name is required");
+    }
 
-    alert(
-        `My name is ${name} ${lastName},\nthe email is ${myEmail}.\nAnd my favorite color is ${myColor}`
-    );
+    if (password.value.length <= 6) {
+        messages.push("Password must be longer than 6 characters");
+    }
+
+    if (password.value.length >= 20) {
+        messages.push("Password must be less than 20 characters");
+    }
+
+    if (password.value === "password") {
+        messages.push("Password cannot be password");
+    }
+
+    if (messages.length > 0) {
+        e.preventDefault();
+        errorElement.innerText = messages.join(", ");
+    }
 });
