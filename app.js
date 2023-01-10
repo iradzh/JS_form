@@ -1,13 +1,14 @@
-const ourForm = document.querySelector("#form");
+const form = document.querySelector("#form");
+const name = document.querySelector("#name").value;
+const lastname = document.querySelector("#lastname").value;
+const color = document.querySelector("#color").value;
+const email = document.querySelector("#email").value;
+const password = document.querySelector("#password").value;
 
 ourForm.addEventListener("submit", function (e) {
-  e.preventDefault();
-  const name = document.querySelector("#firstname").value;
-  const lastName = document.querySelector("#lastname").value;
-  const myEmail = document.querySelector("#email").value;
-  const myColor = document.querySelector("#color").value;
+    e.preventDefault();
 
-  alert(
-    `My name is ${name} ${lastName},\nthe email is ${myEmail}.\nAnd my favorite color is ${myColor}`
-  );
+    alert(
+        `My name is ${name} ${lastName},\nthe email is ${myEmail}.\nAnd my favorite color is ${myColor}`
+    );
 });
