@@ -1,70 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- google font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+        </style>
+        <!-- BULMA -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+        />
+        <title>Kick-off from Lucrecia and Ira</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet" />
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
-    </style>
-    <!-- BULMA -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
-    <title>Kick-off from Lucrecia and Ira</title>
-</head>
-
-<body style="margin-top: 2rem">
-    <!-- added a div for errors -->
-    <div class="box column is-half is-offset-one-quarter">
-        <div style="color: red">
-            <p id="error"></p>
+    <body style="margin-top: 2rem">
+        <!-- added a div for errors -->
+        <div class="box column is-half is-offset-one-quarter">
+            <section class="userData">
+                <h1 class="title">Sign in</h1>
+                <!-- error message -->
+                <div style="color: red">
+                    <p id="error"></p>
+                </div>
+                <!-- changed the action method so it stays on the site -->
+                <form action="/link" id="form" method="GET">
+                    <div class="field">
+                        <label class="label">
+                            First Name
+                            <input
+                                class="input"
+                                type="text"
+                                id="firstname"
+                                placeholder="Enter your First Name"
+                                required
+                            />
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="label">
+                            Last Name
+                            <input
+                                class="input"
+                                type="text"
+                                id="lastname"
+                                placeholder="Enter your Last Name"
+                                required
+                            />
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="label">
+                            Favorite Color
+                            <input
+                                class="input"
+                                type="color"
+                                id="color"
+                                required
+                            />
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="label">
+                            Email
+                            <input
+                                class="input"
+                                type="email"
+                                id="email"
+                                placeholder="me@example.com"
+                                required
+                            />
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="label">
+                            Password
+                            <input
+                                class="input"
+                                type="password"
+                                id="password"
+                                placeholder="Enter your Password"
+                                required
+                            />
+                        </label>
+                    </div>
+                    <button class="button" id="submit_btn" disabled>
+                        Submit
+                    </button>
+                </form>
+            </section>
         </div>
-        <section class="userData">
-
-
-            <h1 class="title">Sign in</h1>
-            <!-- changed the action method so it stays on the site -->
-            <form action="/link" id="form" method="GET">
-                <div class="field">
-                    <label class="label">
-                        First Name
-                        <input class="input" type="text" id="firstname" placeholder="Enter your First Name" required />
-                    </label>
-                </div>
-                <div class="field">
-                    <label class="label">
-                        Last Name
-                        <input class="input" type="text" id="lastname" placeholder="Enter your Last Name" required />
-                    </label>
-                </div>
-                <div class="field">
-                    <label class="label">
-                        Favorite Color
-                        <input class="input" type="color" id="color" required />
-                    </label>
-                </div>
-                <div class="field">
-                    <label class="label">
-                        Email
-                        <input class="input" type="email" id="email" placeholder="Enter your Email" required />
-                    </label>
-                </div>
-                <div class="field">
-                    <label class="label">
-                        Password
-                        <input class="input" type="password" id="password" placeholder="Enter your Password" required />
-                    </label>
-                </div>
-                <button class="button" id="submit_btn" disabled>Submit</button>
-            </form>
-        </section>
-    </div>
-    <script src="app.js"></script>
-</body>
-
+        <script src="app.js"></script>
+    </body>
 </html>
