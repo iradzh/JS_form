@@ -8,6 +8,7 @@ const errorElement = document.getElementById("error");
 const submitButton = document.querySelector("#submit_btn");
 
 let format = /[0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+let formatEmail = /\b[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}\b/;
 
 // first name validation
 
@@ -111,7 +112,22 @@ color.addEventListener("change", function (e) {
 });
 
 // email
-email.addEventListener("input", function (e) {});
+email.addEventListener("input", function (e) {
+    if (email.value && !formatEmail.test(email.value)) {
+        errorElement.innerText = "Provide a valid email format.";
+        email.classList.remove("is-success");
+        email.classList.add("is-danger");
+        return;
+    } else if (formatEmail.test(email.value)) {
+        email.classList.add("is-success");
+        email.classList.remove("is-danger");
+        errorElement.innerText = "";
+    } else {
+        email.classList.remove("is-danger");
+        email.classList.remove("is-success");
+        errorElement.innerText = "";
+    }
+});
 
 //changing button, if use fulfilled the form (add in condition color and email)
 
