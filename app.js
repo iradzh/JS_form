@@ -103,6 +103,7 @@ form.addEventListener("input", function (e) {
     password.classList.contains("is-success")
   ) {
     submitButton.removeAttribute("disabled");
+    submitButton.classList.add("is-success", "is-light");
   }
 });
 
