@@ -32,7 +32,7 @@
                     <p id="error"></p>
                 </div>
                 <!-- changed the action method so it stays on the site -->
-                <form action="/link" id="form" method="GET">
+                <form action="/" id="form" method="GET">
                     <div class="field">
                         <label class="label">
                             First Name
@@ -92,10 +92,28 @@
                             />
                         </label>
                     </div>
-                    <button class="button" id="submit_btn" disabled>
-                        Submit
-                    </button>
+                    <div
+                        class="buttons is-flex is-justify-content-space-between"
+                    >
+                        <button class="button" id="submit_btn" disabled>
+                            Submit
+                        </button>
+                        <button class="button is-danger" id="reset_btn">
+                            Reset
+                        </button>
+                    </div>
                 </form>
+                <!-- collected user data -->
+
+                <article class="message" style="margin-top: 1rem">
+                    <div class="message-header" ; style="margin-top: 1rem">
+                        <p>Please check your data</p>
+                        <button class="delete" aria-label="delete"></button>
+                    </div>
+                    <div class="message-body">
+                        <p id="submited"></p>
+                    </div>
+                </article>
             </section>
         </div>
         <script src="app.js"></script>

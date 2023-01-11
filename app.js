@@ -4,8 +4,9 @@ const lastName = document.querySelector("#lastname");
 const color = document.querySelector("#color");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
-const errorElement = document.getElementById("error");
 const submitButton = document.querySelector("#submit_btn");
+const errorElement = document.getElementById("error");
+const submitedElement = document.getElementById("submited");
 
 let format = /[0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
 let formatEmail = /\b[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}\b/;
@@ -146,7 +147,12 @@ form.addEventListener("input", function (e) {
 
 form.addEventListener("submit", function (e) {
     e.preventDefault();
-    alert(
-        `My name is ${firstName.value} ${lastName.value},\nthe email is ${email.value}.\nAnd my favorite color is ${color.value}`
-    );
+    submitedElement.innerText = `My name is ${firstName.value} ${lastName.value},\nthe email is ${email.value}.\nAnd my favorite color is ${color.value}`;
 });
+
+// form.addEventListener("submit", function (e) {
+//     e.preventDefault();
+//     alert(
+//         `My name is ${firstName.value} ${lastName.value},\nthe email is ${email.value}.\nAnd my favorite color is ${color.value}`
+//     );
+// });
