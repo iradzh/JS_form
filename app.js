@@ -38,7 +38,7 @@ firstName.addEventListener("input", function (e) {
         firstName.classList.remove("is-success");
         firstName.classList.add("is-danger");
     }
-    if (firstName.value.length > 3) {
+    if (firstName.value.length >= 3) {
         errorElement.innerText = "";
         firstName.classList.remove("is-danger");
         firstName.classList.add("is-success");
@@ -73,7 +73,7 @@ lastName.addEventListener("input", function (e) {
         lastName.classList.remove("is-success");
         lastName.classList.add("is-danger");
     }
-    if (lastName.value.length > 3) {
+    if (lastName.value.length >= 3) {
         errorElement.innerText = "";
         lastName.classList.remove("is-danger");
         lastName.classList.add("is-success");
